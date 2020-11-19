@@ -1,4 +1,4 @@
-var BUCKET_URL = 'https://files.vdoster.com.s3.amazonaws.com'
+var BUCKET_URL = 'http://rap-diablo.vdoster.com.s3.amazonaws.com'
 var EXCLUDE_FILE = ['index.html'] // array of file names that shouldnt be displayed
 var S3BL_IGNORE_PATH = true
 var S3B_ROOT_DIR = ''
@@ -96,7 +96,7 @@ function getS3Data (marker, html) {
   var S3RestUrl = createS3QueryUrl(marker)
   // set loading notice
   $('#listing').html(
-    '<img src="http://files.vdoster.com.s3.amazonaws.com/src/loading.gif" />'
+    '<img src="http://rap-diablo.vdoster.com.s3.amazonaws.com/src/loading.gif" />'
   )
   $.get(S3RestUrl)
     .done(function (data) {
@@ -137,7 +137,7 @@ function getS3Data (marker, html) {
 
 function buildNavigation (info) {
   // This is topmost line on file server
-  var root = '<a href="?prefix="><b>Files</b></a> | cwd â†’ /'
+  var root = '<a href="?prefix="><b>Discography</b></a> | cwd â†’ /'
   if (info.prefix) {
     var processedPathSegments = ''
     var content = $.map(info.prefix.split('/'), function (pathSegment) {
